@@ -3,3 +3,5 @@
 .idea
 tests
 *.txt
+citybrain_platform.egg-info
+dist
