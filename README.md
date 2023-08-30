@@ -12,7 +12,7 @@ pip install --upgrade citybrain-platform
 
 ## Usage
 
-The library needs to be configured with your account's secret key which is available on [citybrain.org](https://citybrain.org/#/settings). Either set it as the `CITYBRAIN_APIKEY` environment variable before using the library:
+The library needs to be configured with your account's secret key which is available on [www.citybrain.org](https://www.citybrain.org/#/settings). Either set it as the `CITYBRAIN_APIKEY` environment variable before using the library:
 
 ```sh
 export CITYBRAIN_APIKEY='...'
