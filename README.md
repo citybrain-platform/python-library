@@ -142,3 +142,11 @@ import citybrain_platform
 
 citybrain_platform.Computing.get_job_results(job_id="...", filepath="results.csv")
 ```
+
+### Dataset Operations
+
+```python
+import citybrain_platform
+
+citybrain_platform.Data.download(data_address="...", save_file="test.txt")
+```

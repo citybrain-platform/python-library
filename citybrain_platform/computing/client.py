@@ -1,4 +1,4 @@
-from uplink import Body, Consumer, Query, Field, form_url_encoded, get, inject, json, post, response_handler
+from uplink import Body, Consumer, Query, Field, get, inject, json, post, response_handler
 from uplink.hooks import TransactionHook
 
 class APIResponseException(Exception):
@@ -28,7 +28,6 @@ class ComputingClient(Consumer):
         super(ComputingClient, self).__init__(base_url=base_url)
         self.session.headers["api_key"] = api_key
 
-    @form_url_encoded
     @get("computing/table/detail")
     def table_info(self, name: Query("name")):
         pass

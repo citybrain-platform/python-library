@@ -54,6 +54,7 @@ class JobSummary:
     job_run_time: int
     cpu_cost: int
     mem_cost: int
+    extra: str
 
 @dataclass
 class JobStatusInfo:
