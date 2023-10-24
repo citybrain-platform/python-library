@@ -2,7 +2,7 @@
 
 The Citybrain Platform Python Library provides convenient access to the Citybrain Platform API from applications written in the Python language.
 
-## installation
+## Installation
 
 If you just want to use the package, just run:
 
@@ -29,6 +29,43 @@ citybrain_platform.api_key = "..."
 ## Example Code
 
 Examples of how to use this Python library to accomplish various tasks.
+
+### Storage
+
+#### Upload File
+
+```python
+import citybrain_platform
+
+res = citybrain_platform.Storage.upload_file(remote_path="test/test/test.file", local_file="test.localfile")
+print(res)
+```
+
+#### Download File
+
+```python
+import citybrain_platform
+
+citybrain_platform.Storage.download_file(remote_path="test/test/test.file", local_file="test.localfile")
+```
+
+#### Delete File
+
+```python
+import citybrain_platform
+
+res = citybrain_platform.Storage.delete_file(remote_path="test/test/test.file")
+print(res)
+```
+
+#### List Files
+
+```python
+import citybrain_platform
+
+res = citybrain_platform.Storage.list_files(prefix="testprefix", direct_only=False)
+print(res)
+```
 
 ### Table Operations
 
