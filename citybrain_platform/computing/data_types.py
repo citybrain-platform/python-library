@@ -15,6 +15,10 @@ class JobStatus(str, Enum):
     RUNNING: str = "running"
     TERMINATED: str = "terminated"
 
+class ExternalFiletype(str, Enum):
+    CSV: str = "csv"
+    PARQUET: str = "parquet"
+
 @dataclass
 class Column:
     name: str

@@ -38,7 +38,7 @@ class ComputingClient(Consumer):
 
     @json
     @post("computing/table/create")
-    def table_create(self, name: Field("name"), columns: Field("columns"), partition_columns: Field("partition_columns"), description: Field("description")):
+    def table_create(self, name: Field("name"), columns: Field("columns"), partition_columns: Field("partition_columns"), description: Field("description"), storage_filesource: Field("storage_filesource"), storage_filetype: Field("storage_filetype")):
         pass
 
     @json

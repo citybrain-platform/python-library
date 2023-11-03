@@ -18,7 +18,7 @@ class Storage():
     @classmethod
     def upload_file(cls, remote_path: str, local_file: str) -> bool:
         result = False
-        with open(local_file) as f:
+        with open(local_file, "rb") as f:
             result = cls.__client().file_upload(path=remote_path, body=f)
         return result
     

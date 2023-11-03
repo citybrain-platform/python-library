@@ -18,12 +18,14 @@ class Computing():
         return cls.__CLIENT
     
     @classmethod
-    def create_table(cls, name: str, columns: List[data_types.Column], partition_columns: List[data_types.Column] = [], description: str = "") -> bool:
+    def create_table(cls, name: str, columns: List[data_types.Column], partition_columns: List[data_types.Column] = [], description: str = "", storage_filesource: str = "", storage_filetype: data_types.ExternalFiletype = data_types.ExternalFiletype.CSV) -> bool:
         result = cls.__client().table_create(
             name=name,
             columns=[asdict(col) for col in columns],
             partition_columns=[asdict(col) for col in partition_columns],
-            description=description
+            description=description,
+            storage_filesource=storage_filesource,
+            storage_filetype=storage_filetype.value
         )
         return result
 

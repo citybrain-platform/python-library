@@ -84,7 +84,15 @@ partition_columns = [
     Column("col_pt", ColumnType.INT, "a column for partitioning")
 ]
 
-ok = citybrain_platform.Computing.create_table(name="test_tbl", columns=columns, partition_columns=partition_columns)
+ok = citybrain_platform.Computing.create_table(
+    name="test_tbl",
+    columns=columns,
+    partition_columns=partition_columns,
+    
+    # Set those parameters if you want to create external table from Storage files
+    # storage_filesource="datasource directory", # the directory of source files
+    # storage_filetype=data_types.ExternalFiletype.PARQUET # file format of the source, current support PARQUET and CSV
+)
 print(ok)
 ```
 
