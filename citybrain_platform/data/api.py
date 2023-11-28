@@ -21,3 +21,11 @@ class Data():
         with open(save_file, 'wb') as f:
             for chunk in resp.iter_content(chunk_size=4096): 
                 f.write(chunk)
+    
+    @classmethod
+    def add_remote(cls, name: str, description: str, remote_url: str) -> str:
+        result = cls.__client().add_remote(name=name, description=description, url=remote_url)
+        return result
+
+
+        
