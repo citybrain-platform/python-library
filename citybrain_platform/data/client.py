@@ -37,3 +37,8 @@ class DataClient(Consumer):
     @post("data/add_remote")
     def add_remote(self, name: Field("name"), description: Field("description"), url: Field("url")):
         pass
+
+    @json
+    @post("data/add_storage")
+    def add_storage(self, name: Field("name"), description: Field("description"), file_path: Field("file_path")):
+        pass

@@ -190,6 +190,14 @@ citybrain_platform.Computing.get_job_results(job_id="...", filepath="results.csv
 
 ### Dataset Operations
 
+#### Add Storage Data
+
+```python
+import citybrain_platform
+
+citybrain_platform.Data.add_storage(name="", description="", file_path="")
+```
+
 #### Add Remote Data
 
 ```python

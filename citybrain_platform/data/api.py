@@ -27,5 +27,10 @@ class Data():
         result = cls.__client().add_remote(name=name, description=description, url=remote_url)
         return result
 
+    @classmethod
+    def add_storage(cls, name: str, description: str, file_path: str) -> str:
+        result = cls.__client().add_storage(name=name, description=description, file_path=file_path)
+        return result
+
 
         
