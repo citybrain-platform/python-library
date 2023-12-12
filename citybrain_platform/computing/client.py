@@ -53,7 +53,7 @@ class ComputingClient(Consumer):
 
     @json
     @post("computing/table/public")
-    def table_public(self, name: Field("name")):
+    def update_table_status(self, name: Field("name"), status: Field("status")):
         pass
 
     @get("computing/table/list")

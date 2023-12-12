@@ -58,8 +58,9 @@ class Computing():
         return result
     
     @classmethod
-    def public_table(cls, name: str) -> str:
-        result = cls.__client().table_public(name=name)
+    def update_table_status(cls, name: str, public: bool) -> str:
+        status = "public" if public else "private"
+        result = cls.__client().update_table_status(name=name, status=status)
         return result
 
     

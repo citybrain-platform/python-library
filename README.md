@@ -132,12 +132,12 @@ result = citybrain_platform.Computing.drop_table(name="test_tbl")
 print(result)
 ```
 
-#### Make Table Public To Others
+#### Make Table Public Or Private To Others
 
 ```python
 import citybrain_platform
 
-public_table_name = citybrain_platform.Computing.public_table(name="test_tbl")
+public_table_name = citybrain_platform.Computing.update_table_status(name="test_tbl", public=False)
 print(public_table_name)
 ```
 
