@@ -43,7 +43,7 @@ class Computing():
     def upload_table_data(cls, name: str, append: bool, csv_filepath: str, partition_key: Dict[str, str] = None) -> bool:
         appendParam = "true" if append else "false"
         result = False
-        with open(csv_filepath) as f:
+        with open(csv_filepath, 'rb') as f:
             result = cls.__client().table_upload(name=name, append=appendParam, partition_key=json.dumps(partition_key), body=f)
         return result
     
