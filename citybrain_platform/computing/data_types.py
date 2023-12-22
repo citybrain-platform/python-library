@@ -2,6 +2,12 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import List, Optional
 
+class ResourceType(str, Enum):
+    PY: str = "py"
+    JAR: str = "jar"
+    ARCHIVE: str = "archive"
+    FILE: str = "file"
+
 class ColumnType(str, Enum):
     STRING: str = "STRING"
     INT: str = "INT"

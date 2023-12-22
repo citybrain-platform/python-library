@@ -71,8 +71,20 @@ class Computing():
         return table_list
     
     @classmethod
+    def create_function(cls, name: str, class_type: str, resources: List[str], comment: str = "") -> bool:
+        result = cls.__client().create_function(name=name, class_type=class_type, comment=comment, resources=resources)
+        return result
+    
+    @classmethod
+    def create_resource(cls, name: str, type: data_types.ResourceType, local_file: str, comment: str = "") -> bool:
+        result = False
+        with open(local_file, "rb") as f:
+            result = cls.__client().create_resource(name=name, type=type.value, comment=comment, body=f)
+        return result
+    
+    @classmethod
     def create_job(cls, sql: str, worker_limit: int = 0, split_size: int = 0) -> str:
-        result = cls.__client().job_submit(sql=sql, worker_limit=worker_limit, split_size=worker_limit)
+        result = cls.__client().job_submit(sql=sql, worker_limit=worker_limit, split_size=split_size)
         return result
     
     @classmethod
@@ -96,9 +108,9 @@ class Computing():
         return job_status
     
     @classmethod
-    def get_job_results(cls, job_id: str, filepath: str):
-        response = cls.__client().job_result(job_id=job_id)
-        with open(filepath, "wb") as f:
+    def get_job_results(cls, job_id: str, filepath: str, append: bool = False, header: bool = True):
+        response = cls.__client().job_result(job_id=job_id, header=header)
+        with open(filepath, "ab" if append else "wb") as f:
             for l in response.iter_lines():
                 f.write(l)
                 f.write(b'\n')

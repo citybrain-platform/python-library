@@ -61,6 +61,15 @@ class ComputingClient(Consumer):
         pass
 
     @json
+    @post("computing/function/create")
+    def create_function(self, name: Field("name"), class_type: Field("class_type"), comment: Field("comment"), resources: Field("resources")):
+        pass
+
+    @post("computing/resource/create")
+    def create_resource(self, name: Query("name"), type: Query("type"), comment: Query("comment"), body: Body):
+        pass
+
+    @json
     @post("computing/job/submit")
     def job_submit(self, sql: Field("sql"), worker_limit: Field("worker_limit"), split_size: Field("split_size")):
         pass
@@ -76,5 +85,5 @@ class ComputingClient(Consumer):
 
     @inject(_response_stream_hook)
     @get("computing/job/result")
-    def job_result(self, job_id: Query("job_id")):
+    def job_result(self, job_id: Query("job_id"), header: Query("header")):
         pass
