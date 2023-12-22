@@ -71,8 +71,8 @@ class Computing():
         return table_list
     
     @classmethod
-    def create_function(cls, name: str, class_type: str, resources: List[str], comment: str = "") -> bool:
-        result = cls.__client().create_function(name=name, class_type=class_type, comment=comment, resources=resources)
+    def create_function(cls, name: str, class_file: str, class_name: str, resources: List[str], comment: str = "") -> bool:
+        result = cls.__client().create_function(name=name, class_file=class_file, class_name=class_name, comment=comment, resources=resources)
         return result
     
     @classmethod

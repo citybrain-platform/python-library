@@ -62,7 +62,7 @@ class ComputingClient(Consumer):
 
     @json
     @post("computing/function/create")
-    def create_function(self, name: Field("name"), class_type: Field("class_type"), comment: Field("comment"), resources: Field("resources")):
+    def create_function(self, name: Field("name"), class_file: Field("class_file"), class_name: Field("class_name"), comment: Field("comment"), resources: Field("resources")):
         pass
 
     @post("computing/resource/create")
