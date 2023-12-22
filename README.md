@@ -67,6 +67,35 @@ res = citybrain_platform.Storage.list_files(prefix="testprefix", direct_only=Fal
 print(res)
 ```
 
+### User Defined Function Operations
+
+#### Create Function
+
+```python
+result = citybrain_platform.Computing.create_function(
+    name="test_udf", # function name
+    class_file="testudf.py", # the file where the class is located
+    class_name="TestUDF2", # class name
+    comment="test function",
+    resources=["testudf.py", "other.py"] # resources used by this function
+)
+print(result)
+```
+
+#### Create Resource
+
+```python
+from citybrain_platform import ResourceType
+
+result = citybrain_platform.Computing.create_resource(
+    name="testudf.py", # resource name, must contain extension
+    type=ResourceType.PY, # resource type
+    comment="test resource",
+    local_file="udf.py" # local resource file
+)
+print(result)
+```
+
 ### Table Operations
 
 #### Create Table
