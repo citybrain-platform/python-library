@@ -15,6 +15,7 @@ class ColumnType(str, Enum):
     FLOAT: str = "FLOAT"
     DOUBLE: str = "DOUBLE"
     TIMESTAMP: str = "TIMESTAMP"
+    BINARY: str = "BINARY"
 
 class JobStatus(str, Enum):
     UNSTARTED: str = "unstarted"
